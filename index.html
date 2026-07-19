@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>w3id.org/sanskrit-lexicon — namespace index</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1a1a1a; --bg:#fff; --mut:#5c5c5c; --line:#e3e3e3; --acc:#7a2e0e; --code:#f6f6f4; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#e8e6e3; --bg:#16181a; --mut:#9aa0a6; --line:#2c3033; --acc:#e0a080; --code:#1e2124; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:2.5rem 1.25rem 4rem; background:var(--bg); color:var(--fg);
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; }
+  h1 { font-size:1.5rem; margin:0 0 .25rem; letter-spacing:-.01em; }
+  h2 { font-size:1.05rem; margin:2.25rem 0 .6rem; padding-bottom:.3rem; border-bottom:1px solid var(--line); }
+  .sub { color:var(--mut); margin:0 0 1.5rem; font-size:.95rem; }
+  code, .iri { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.88em;
+               background:var(--code); padding:.1em .35em; border-radius:3px; word-break:break-all; }
+  a { color:var(--acc); }
+  table { border-collapse:collapse; width:100%; font-size:.9rem; }
+  td, th { text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--mut); font-weight:600; }
+  .note { border-left:3px solid var(--acc); padding:.7rem .9rem; background:var(--code);
+          border-radius:0 4px 4px 0; font-size:.92rem; margin:1rem 0; }
+  footer { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+           color:var(--mut); font-size:.85rem; }
+  .wrap { overflow-x:auto; }
+</style>
+</head>
+<body>
+<main>
+
+<h1><span class="iri">https://w3id.org/sanskrit-lexicon/</span></h1>
+<p class="sub">Permanent identifier namespace for Linked Open Data derived from the
+Cologne Digital Sanskrit Dictionaries.</p>
+
+<div class="note">
+<strong>Status: namespace registered, graph data not yet published.</strong>
+The IRI scheme below is stable and in use by the generator and its test fixtures.
+Instance data (entries, senses, citations) is withheld pending an editorial
+sense-approval gate — the current translation store is entirely machine-produced
+and has not been human-approved for publication. The SHACL profile is published now
+so the modelling contract can be reviewed and cited ahead of the data.
+</div>
+
+<h2>Registered sub-namespaces</h2>
+<div class="wrap">
+<table>
+  <tr><th>IRI</th><th>Dataset</th><th>State</th></tr>
+  <tr>
+    <td><span class="iri">/pwg-ru/</span></td>
+    <td>Petersburg Dictionary (Böhtlingk–Roth) with Russian sense definitions —
+        OntoLex-Lemon + LiLa-style lemma bank, PROV-O evidence grades, first-class
+        <code>&lt;ls&gt;</code> citations, Renou stratum dating, vartrans sense relations,
+        DCS corpus frequency.</td>
+    <td>Schema published; data gated.</td>
+  </tr>
+</table>
+</div>
+
+<h2>IRI scheme (<span class="iri">/pwg-ru/</span>)</h2>
+<div class="wrap">
+<table>
+  <tr><th>Pattern</th><th>Resource</th></tr>
+  <tr><td><span class="iri">lexicon/pwg-ru</span></td><td>the lexicon itself (<code>lime:Lexicon</code>)</td></tr>
+  <tr><td><span class="iri">entry/{key1}[-{n}]</span></td><td>lexical entry; <code>-n</code> disambiguates homonyms</td></tr>
+  <tr><td><span class="iri">sense/entry/{key1}[-{n}]/{frag}</span></td><td>lexical sense</td></tr>
+  <tr><td><span class="iri">lemma/{key1}</span></td><td>lemma-bank hub — the shared join key across datasets</td></tr>
+  <tr><td><span class="iri">citation/…</span></td><td>a resolved <code>&lt;ls&gt;</code> source citation</td></tr>
+  <tr><td><span class="iri">attestation/…</span></td><td>stratum attestation</td></tr>
+  <tr><td><span class="iri">rel/…</span></td><td>vartrans sense relation</td></tr>
+  <tr><td><span class="iri">section/…</span></td><td>grammar section</td></tr>
+  <tr><td><span class="iri">grade/scheme</span>, <span class="iri">grade/{slug}</span></td><td>SKOS evidence-grade concept scheme</td></tr>
+  <tr><td><span class="iri">prov/…</span></td><td>PROV-O generation activities</td></tr>
+  <tr><td><span class="iri">dcs/dataset</span></td><td>DCS corpus-frequency dataset node</td></tr>
+  <tr><td><span class="iri">vocab#{term}</span></td><td>project vocabulary terms (prefix <code>pwglex:</code>)</td></tr>
+</table>
+</div>
+
+<p>Slash IRIs are used for instances and resolve by 303 redirect with content
+negotiation (<code>text/turtle</code> → <code>.ttl</code>, otherwise HTML). The hash form is
+reserved for the <code>pwglex:</code> vocabulary document.</p>
+
+<h2>Published now</h2>
+<ul>
+  <li><a href="shapes.ttl">shapes.ttl</a> — SHACL profile pinning the modelling contract
+      (entry has a canonical form and at least one graded sense; citations and stratum
+      attestations carry their required provenance fields).</li>
+</ul>
+
+<h2>Documentation</h2>
+<ul>
+  <li><a href="https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/LOD_GRAPH.md">LOD_GRAPH.md</a>
+      — the graph model: namespaces, classes, and how each layer is derived.</li>
+  <li><a href="https://github.com/gasyoun/csl-standards/blob/main/docs/PUBLISHING_LOD.md">PUBLISHING_LOD.md</a>
+      — the publishing runbook: licensing, dereferencing, versioning, endpoint options.</li>
+  <li><a href="https://github.com/gasyoun/csl-standards/tree/main/standards/pwg-ru-lod">csl-standards/pwg-ru-lod</a>
+      — the standards surface: SHACL profile, VoID descriptor, acceptance queries.</li>
+</ul>
+
+<h2>Maintainer</h2>
+<p>Dr. Mārcis Gasūns —
+<a href="https://orcid.org/0000-0003-4513-884X">ORCID 0000-0003-4513-884X</a> ·
+GitHub <a href="https://github.com/gasyoun">@gasyoun</a></p>
+
+<footer>
+Redirects for this namespace are administered through
+<a href="https://github.com/perma-id/w3id.org/tree/master/sanskrit-lexicon">perma-id/w3id.org</a>.
+The w3id layer decouples these permanent identifiers from any particular host — the
+redirect target may change without any IRI changing.
+</footer>
+
+</main>
+</body>
+</html>
