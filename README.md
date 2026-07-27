@@ -22,8 +22,8 @@ store) without a single IRI changing.
 
 - **Graph data** (entries, senses, citations). The PWG→RU translation store is at present
   entirely machine-produced; publishing sense definitions is gated on an editorial
-  sense-approval pass. Until that gate clears, instance IRIs under `/pwg-ru/entry/…`,
-  `/pwg-ru/sense/…` and siblings will not resolve to data. This is intentional, not an outage.
+  sense-approval pass. Until that gate clears, instance IRIs under `/repwg/entry/…`,
+  `/repwg/sense/…` and siblings will not resolve to data. This is intentional, not an outage.
 - **The VoID/DCAT descriptor.** The version in
   [csl-standards](https://github.com/gasyoun/csl-standards/blob/main/standards/pwg-ru-lod/void.ttl)
   is an explicit stub template with unfilled counts, license and DOI slots. Publishing it

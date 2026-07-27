@@ -50,21 +50,34 @@ so the modelling contract can be reviewed and cited ahead of the data.
 <table>
   <tr><th>IRI</th><th>Dataset</th><th>State</th></tr>
   <tr>
-    <td><span class="iri">/pwg-ru/</span></td>
-    <td>Petersburg Dictionary (Böhtlingk–Roth) with Russian sense definitions —
-        OntoLex-Lemon + LiLa-style lemma bank, PROV-O evidence grades, first-class
-        <code>&lt;ls&gt;</code> citations, Renou stratum dating, vartrans sense relations,
-        DCS corpus frequency.</td>
+    <td><span class="iri">/repwg/</span></td>
+    <td><strong>rePWG</strong> — a re-edition graph of the Petersburg Dictionary
+        (Böhtlingk–Roth <em>PWG</em> with its <em>PW</em>, <em>SCH</em>,
+        <em>PWKVN</em> and <em>NWS</em> supplements): OntoLex-Lemon + TEI Lex-0
+        over the German edition layers, a LiLa-style lemma bank, PROV-O evidence
+        grades, first-class <code>&lt;ls&gt;</code> citations, Renou stratum
+        dating, vartrans sense relations, DCS corpus frequency, and Russian sense
+        definitions.</td>
     <td>Schema published; data gated.</td>
+  </tr>
+  <tr>
+    <td><span class="iri">/pwg-ru/</span></td>
+    <td>Former name of the same namespace, retired 27-07-2026: four of its five
+        graphs are not Russian, so the name claimed a property the namespace does
+        not have. No identifier was withdrawn.</td>
+    <td>Permanent <code>301</code> to <span class="iri">/repwg/</span>.</td>
   </tr>
 </table>
 </div>
 
-<h2>IRI scheme (<span class="iri">/pwg-ru/</span>)</h2>
+<h2>IRI scheme (<span class="iri">/repwg/</span>)</h2>
 <div class="wrap">
 <table>
   <tr><th>Pattern</th><th>Resource</th></tr>
-  <tr><td><span class="iri">lexicon/pwg-ru</span></td><td>the lexicon itself (<code>lime:Lexicon</code>)</td></tr>
+  <tr><td><span class="iri">lexicon/{id}</span></td><td>one <code>lime:Lexicon</code> per dataset —
+      <span class="iri">pwg-ru</span> (Russian senses), <span class="iri">pwg-de</span> and
+      <span class="iri">pwg-de-edition</span> (German, public domain),
+      <span class="iri">pwg-grammar</span>. Language lives here, not in the namespace root.</td></tr>
   <tr><td><span class="iri">entry/{key1}[-{n}]</span></td><td>lexical entry; <code>-n</code> disambiguates homonyms</td></tr>
   <tr><td><span class="iri">sense/entry/{key1}[-{n}]/{frag}</span></td><td>lexical sense</td></tr>
   <tr><td><span class="iri">lemma/{key1}</span></td><td>lemma-bank hub — the shared join key across datasets</td></tr>
