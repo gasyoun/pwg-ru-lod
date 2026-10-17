@@ -25,7 +25,7 @@ store) without a single IRI changing.
   sense-approval pass. Until that gate clears, instance IRIs under `/repwg/entry/…`,
   `/repwg/sense/…` and siblings will not resolve to data. This is intentional, not an outage.
 - **The VoID/DCAT descriptor.** The version in
-  [csl-standards](https://github.com/gasyoun/csl-standards/blob/main/standards/pwg-ru-lod/void.ttl)
+  [csl-standards](https://github.com/sanskrit-lexicon/csl-standards/blob/main/standards/pwg-ru-lod/void.ttl)
   is an explicit stub template with unfilled counts, license and DOI slots. Publishing it
   as-is would put false dataset metadata on the open web.
 - **The `pwglex:` vocabulary document.** 53 terms are in active use across the graph
