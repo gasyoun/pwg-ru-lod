@@ -1,0 +1,10 @@
+# w3id.org/sanskrit-lexicon — namespace index
+
+> Permanent-ID namespace index for the Sanskrit Linked Open Data graph: PWG Russian translation LOD and related standards, with SHACL shapes.
+
+## Pages
+
+- [Namespace index](https://gasyoun.github.io/pwg-ru-lod/)
+- [SHACL shapes](https://gasyoun.github.io/pwg-ru-lod/shapes.ttl)
+
+Graph docs: https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/LOD_GRAPH.md · Source: https://github.com/gasyoun/pwg-ru-lod
